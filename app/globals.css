@@ -1,0 +1,274 @@
+:root{--bg:#f4f6f8;--card:#fff;--ink:#1c2433;--mute:#6b7585;--line:#d9dee5;--acc:#1f4fa3;--sat:#1f4fa3;--sun:#c23b3b;--inp:#fffbe8;--ok:#1f7a4d;--ng:#c23b3b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141922;--card:#1d2430;--ink:#e8ecf2;--mute:#99a3b3;--line:#323b4a;--acc:#7aa5f0;--sat:#7aa5f0;--sun:#f08080;--inp:#2a2f1f;--ok:#6fd1a0;--ng:#f08080}}
+:root[data-theme="dark"]{--bg:#141922;--card:#1d2430;--ink:#e8ecf2;--mute:#99a3b3;--line:#323b4a;--acc:#7aa5f0;--sat:#7aa5f0;--sun:#f08080;--inp:#2a2f1f;--ok:#6fd1a0;--ng:#f08080}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font-noto),"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif}
+main{max-width:1240px;margin:0 auto;padding:20px 16px 48px;text-align:center}
+h1{font-size:22px;margin:0 0 4px}h2{font-size:16px;margin:0 0 12px}
+p.sub{margin:0 0 20px;color:var(--mute)}
+section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+label{display:block;font-size:13px;color:var(--mute)}
+input[type=number],input[type=month],input[type=text],select{width:100%;margin-top:4px;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:var(--inp);color:var(--ink);font:inherit}
+input[type=number]{text-align:center}
+input:focus-visible,select:focus-visible{outline:2px solid var(--acc);outline-offset:1px}
+.note{font-size:13px;color:var(--mute);margin:10px 0 0}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border:1px solid var(--line);border-radius:6px}
+.sc{padding:10px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sl{font-size:13px;color:var(--mute)}.sv{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}.ss{font-size:12px;color:var(--mute)}.ss.sm{font-size:11px;white-space:nowrap}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:auto;font-variant-numeric:tabular-nums}
+th,td{padding:4px 8px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap;font-weight:400}
+th{font-size:13px;font-weight:500}
+th:first-child,td:first-child{position:sticky;left:0;z-index:1;text-align:center;background:var(--card);border-right:1px solid var(--line);padding-right:14px;min-width:150px}
+td input,td select{width:84px;padding:3px 5px;margin:0;font-size:14px}
+td select,th select{width:70px}
+td input.h{width:64px;padding:3px 3px}
+select{text-align:center;text-align-last:center}
+.hp{display:inline-block}.hp b.u{display:inline-block;min-width:64px;font-weight:400}.hp i{display:block;font-size:11px;font-style:normal;color:var(--mute);line-height:1.3}
+th.sat,td.sat{color:var(--sat)}th.sun,td.sun{color:var(--sun)}
+th.sat,th.sun,td.sat,td.sun{background:color-mix(in srgb,var(--line) 25%,var(--card))}
+tr.grp td,tr.grp th{border-top:2px solid var(--line)}
+.tot{font-weight:700;border-left:2px solid var(--ink)}
+.ok{color:var(--ok)}.ng{color:var(--ng)}
+th.v2{position:sticky;left:150px;z-index:1;text-align:center;background:var(--card);border-right:1px solid var(--line);min-width:110px}.pl{padding:0 8px;margin-left:6px;font-size:14px;line-height:1.5}
+dialog{border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);padding:16px;width:min(340px,90vw)}dialog::backdrop{background:rgba(0,0,0,.4)}.dl{display:grid;gap:12px}.dr{display:flex;gap:8px;justify-content:flex-end}.warn{font-size:13px;color:var(--ng);text-align:left}[hidden]{display:none!important}tr.sp th{position:static;height:14px;padding:0;border:0;background:var(--bg)}input[readonly]{background:transparent}.pm{font-size:11px;color:var(--mute);margin-left:4px}
+button{font:inherit;padding:8px 14px;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:50}
+.md{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:16px;width:min(340px,90vw)}
+.hp+.hp{margin-left:4px}
+.dl{text-align:left}
+
+.cmp{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.cmp label,.one label{display:flex;flex-direction:column;font-size:11px;white-space:nowrap}
+.cmp input{font-size:13px;padding:5px 6px}
+.one{display:grid;grid-template-columns:132px 132px repeat(7,minmax(92px,1fr));gap:8px;overflow-x:auto}
+.one input{font-size:12px;padding:4px 6px}
+
+input[type=number]{-moz-appearance:textfield;appearance:textfield}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+
+/* 見出しと給与ボタン */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+.top h1{margin:0}
+.paybtn{font-weight:700;border-color:var(--acc);color:var(--acc)}
+
+/* 売上・来客・客単価の独立した領域 */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;text-align:center}
+.kpi .sl{font-size:14px;font-weight:700}
+.kpi .sv{font-size:24px;margin:2px 0 6px}
+
+/* 月間サマリーは1項目1行 */
+.sum{grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.sc{min-width:0}
+.sv{font-size:17px;white-space:nowrap}
+.ss,.ss.sm{font-size:11px;white-space:nowrap}
+
+/* 設定は折りたたみ */
+.fold>summary{cursor:pointer;font-size:16px;font-weight:700;list-style:none;text-align:left}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::before{content:"▸ "}
+.fold[open]>summary::before{content:"▾ "}
+.fold[open]>summary{margin-bottom:12px}
+.one7{grid-template-columns:repeat(7,minmax(150px,1fr))}
+
+/* 円グラフ */
+.pies{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:12px}
+.pie{border:1px solid var(--line);border-radius:6px;padding:12px}
+.pie .sl{font-weight:700;color:var(--ink);margin-bottom:6px}
+.pie-body{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.legend{list-style:none;margin:0;padding:0;text-align:left;font-size:12px}
+.legend li{display:flex;align-items:center;gap:6px;margin:2px 0;white-space:nowrap}
+.legend i{width:10px;height:10px;border-radius:2px;flex:none}
+.legend span{color:var(--mute);margin-left:6px}
+
+/* 月次の経費 */
+.wrap2{overflow-x:auto}
+.mt{border-collapse:collapse;width:auto;min-width:520px;margin:0 auto}
+.mt th,.mt td{border:1px solid var(--line);padding:4px 10px;text-align:center;font-weight:400;white-space:nowrap}
+.mt thead th{font-size:12px;color:var(--mute)}
+.mt .mcat{font-weight:700}
+.mt .mname{text-align:left}
+.mt .mnone{color:var(--mute);font-size:12px}
+.mt td input{width:140px;text-align:right}
+.mt .mtot{font-weight:700;text-align:right}
+.mt tfoot th{text-align:right}
+
+/* 日計表：濃い背景に白い文字（日付・曜日・達成率だけ色を残す） */
+.tblbox{--card:#1b2332;--ink:#fff;--line:#66748f;--inp:#2a3446;--mute:#b4bdcc;--sat:#8bb4ff;--sun:#ff9d9d;--ok:#6fd1a0;--ng:#ff8f8f;
+  background:var(--card);color:var(--ink);border-radius:8px;padding:6px}
+.topscroll{overflow-x:auto;overflow-y:hidden;height:14px}
+.tblbox .wrap{overflow-x:auto}
+th.dh{color:#f2d98d}
+th.dh.sat{color:var(--sat)}th.dh.sun{color:var(--sun)}
+th.sat,td.sat{color:inherit}th.sun,td.sun{color:inherit}
+th.dh.sat,th.dh.sun{background:color-mix(in srgb,var(--line) 25%,var(--card))}
+th,td{border-bottom:1px solid var(--line)}
+th:first-child{min-width:152px}
+th.vt{writing-mode:vertical-rl;width:34px;min-width:34px;max-width:34px;padding:6px 2px;line-height:1.3;letter-spacing:.06em;white-space:nowrap}
+th.v2{left:34px;min-width:118px;text-align:left}
+th.v2 .pay{text-align:left}
+.tblbox input[type=checkbox]{width:auto}
+.pay{display:block;font-size:11px;color:#9fe3bd;white-space:nowrap}
+.mv{padding:0 3px;margin-left:2px;font-size:9px;line-height:1.6;border-radius:3px;opacity:.75}
+.mt .mv{font-size:10px}
+th.vt .pl{display:inline-block;width:24px;margin:6px 0 0;padding:2px 0;writing-mode:horizontal-tb;font-size:13px;text-align:center}
+
+/* ===== 中央揃え ===== */
+th.v2,th.v2 .pay,.mt .mname,.legend,.fold>summary,.dl,.pie .sl{text-align:center}
+input[type=text]{text-align:center}
+.legend li{justify-content:center}
+.dl{text-align:center}
+
+/* ===== 土日の背景は他の曜日と同じ ===== */
+th.sat,th.sun,td.sat,td.sun,th.dh.sat,th.dh.sun{background:transparent}
+
+/* ===== 並び替えボタンは縦に ===== */
+.mvs{display:inline-flex;flex-direction:column;vertical-align:middle;margin-left:3px}
+.mvs .mv{display:block;margin:0;padding:0 3px;font-size:8px;line-height:1.15;border-radius:2px}
+
+/* ===== 上部：対象月と給与ボタン ===== */
+.topbtns{display:flex;align-items:flex-end;gap:10px}
+.topmonth{display:flex;flex-direction:column;font-size:11px}
+.topmonth input{width:150px;margin-top:2px}
+.alertbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:100;background:var(--ng);color:#fff;padding:10px 18px;border-radius:8px;font-weight:700;box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;max-width:92vw}
+
+/* ===== 設定は8項目を1行 ===== */
+.one{grid-template-columns:repeat(8,minmax(92px,1fr))}
+.one7{grid-template-columns:repeat(7,minmax(150px,1fr))}
+
+/* ===== 円グラフ ===== */
+.pies2{display:grid;grid-template-columns:minmax(340px,1fr) minmax(0,2fr);gap:16px;align-items:start;margin-bottom:16px}
+.pies2 section{margin-bottom:0}
+@media(max-width:900px){.pies2{grid-template-columns:1fr}}
+.pie-body svg{display:block}
+
+/* ===== 月次の経費（4列） ===== */
+.mcols{display:grid;grid-template-columns:repeat(4,minmax(180px,1fr));gap:10px}
+.mcol{border:1px solid var(--line);border-radius:6px;padding:8px;display:flex;flex-direction:column;gap:6px}
+.mhead{font-weight:700;text-align:center;border-bottom:1px solid var(--line);padding-bottom:4px}
+.mrow{display:flex;flex-direction:column;gap:3px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.mname{font-size:13px}
+.mnone{color:var(--mute);font-size:12px;text-align:center}
+.msum{margin-top:auto;font-size:12px;font-weight:700;text-align:center}
+.mall{margin-top:10px;text-align:center;font-weight:700}
+.mcol input{text-align:center}
+
+/* ===== 日計表を小さく（8日分が横スクロールなしで入る） ===== */
+.tblbox{font-size:11px}
+.tblbox th,.tblbox td{padding:2px 3px;font-size:11px}
+.tblbox input,.tblbox select{font-size:11px;padding:2px 3px}
+.tblbox td>input:not(.h){width:94px}
+.tblbox td input.h{width:46px;padding:2px 2px}
+.tblbox select{width:60px}
+.tblbox .hp i{font-size:9px}
+.tblbox th:first-child{min-width:128px;font-size:10.5px;white-space:normal;line-height:1.25}
+.tblbox th.vt{width:26px;min-width:26px;max-width:26px;padding:4px 1px;font-size:10.5px;white-space:nowrap}
+.tblbox th.vt .pl{width:20px;padding:1px 0;font-size:11px}
+.tblbox th.v2{left:26px;min-width:102px;font-size:10.5px;white-space:normal}
+.tblbox td.tot,.tblbox th.tot{white-space:normal;min-width:96px;max-width:170px;font-size:10px}
+.tblbox .pay{font-size:9.5px}
+.tblbox .pm{font-size:9px}
+.tblbox .pl{font-size:11px;padding:0 4px}
+.tblbox .hp b.u{min-width:46px}
+
+/* ===== 縦のラベル：1文字ずつ縦に積む ===== */
+th.vt,.tblbox th.vt{writing-mode:horizontal-tb;letter-spacing:0;white-space:normal;text-align:center;vertical-align:middle}
+.vchars{display:block}
+.vchars>span{display:block;line-height:1.15;font-size:10.5px}
+th.vt .pl,.tblbox th.vt .pl{display:block;margin:5px auto 0;width:20px}
+
+/* ===== 円グラフ：食材と飲料は横並び、経費の割合は凡例を右隣に ===== */
+.pies{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pies2{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+@media(max-width:900px){.pies2{grid-template-columns:1fr}}
+.pie-body.row{flex-wrap:nowrap;justify-content:flex-start}
+.pie-body.row .legend{flex:none}
+.legend li{font-size:11px}
+.legend{text-align:left}
+.legend li{justify-content:flex-start}
+
+/* ===== 日計表：列幅を固定し、罫線を入れ、左の列は1行で ===== */
+.tblbox th:first-child{min-width:0;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:clip;padding:2px 3px}
+.tblbox th.vt,.tblbox th.vt:first-child{width:24px;min-width:0;max-width:none;white-space:normal;padding:4px 1px}
+.tblbox th.v2{left:24px;min-width:0;font-size:10px;white-space:normal;overflow-wrap:anywhere}
+.tblbox td input.h{width:43px;padding:2px 1px}
+.tblbox td>input:not(.h){width:86px}
+.tblbox .hp b.u{min-width:43px}
+.tblbox td.tot,.tblbox th.tot{min-width:0;max-width:none;white-space:normal;font-size:9.5px;padding:2px 2px}
+.tblbox td{overflow:hidden}
+.tblbox .hp{max-width:100%}
+
+/* ===== 取引先名・氏名：名前（自動縮小）＋補足、右にボタン（改行しない） ===== */
+.vn{display:flex;align-items:center;gap:3px}
+.vn-txt{flex:1;min-width:0;text-align:center;overflow:hidden}
+.fit{display:inline-block;white-space:nowrap;line-height:1.2}
+.vn-txt .pm,.vn-txt .pay{display:block;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:9px}
+.vn-btns{display:flex;flex:none;align-items:center;gap:2px;white-space:nowrap}
+.vn-btns .pl{margin:0;padding:0 4px;white-space:nowrap}
+.vn-btns .mvs{margin:0;flex-direction:column}
+.tblbox th.v2{white-space:nowrap;overflow:visible;padding:2px 3px}
+.mrow .vn{justify-content:center}
+.mrow .vn-txt{flex:0 1 auto}
+
+/* ===== 円グラフ：3つとも同じ大きさ、凡例なし ===== */
+.pies2{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
+.pies{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:900px){.pies2{grid-template-columns:1fr}.pies{grid-template-columns:1fr}}
+.pie-svg{display:block;width:100%;max-width:340px;margin:0 auto;height:auto}
+
+/* ===== 日計表：分類ごとに枠で囲む ===== */
+.tblbox{--box:#9fb4d8}
+.tblbox tr.bk-top>*,.tblbox tr.bk-one>*{border-top:2px solid var(--box)}
+.tblbox tr.bk-bot>*,.tblbox tr.bk-one>*{border-bottom:2px solid var(--box)}
+.tblbox tr.bk>td.tot{border-right:2px solid var(--box)}
+.tblbox tr.bk>th.vt{border-left:2px solid var(--box)}
+.tblbox tr.bk>th.v2:first-child{border-left:0}
+.pie-svg{max-width:320px}
+.vn-btns .pl{padding:0 3px;font-size:10px}
+.vchars>span{line-height:1.02;font-size:10px}
+
+/* ===== 罫線：border-collapse をやめ、各セルが自分の右と下の線を持つ =====
+   （collapse のままだと、左に固定した列は横にスクロールしたときに線が外れる） */
+.tblbox table{border-collapse:separate;border-spacing:0}
+.tblbox thead th,.tblbox tbody th,.tblbox tbody td{border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tblbox thead tr:first-child th{border-top:1px solid var(--line)}
+.tblbox thead th:first-child,.tblbox tbody th:first-child{border-left:1px solid var(--line)}
+.tblbox tbody tr>th.v2:first-child{border-left:0}
+.tblbox tbody tr.sp>th{border:0}
+.tblbox tr.bk-top>*,.tblbox tr.bk-one>*{border-top:2px solid var(--box)}
+.tblbox tr.bk-bot>*,.tblbox tr.bk-one>*{border-bottom:2px solid var(--box)}
+.tblbox tr.bk>td.tot{border-right:2px solid var(--box)}
+.tblbox tr.bk>th.vt{border-left:2px solid var(--box);border-bottom:2px solid var(--box)}
+
+/* ===== 円グラフ：開閉式、3つとも大きく同じサイズ ===== */
+.pies3{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px}
+.pie-svg{max-width:460px}
+
+/* ===== 日の列を少し広く ===== */
+.tblbox td input.h{width:49px}
+.tblbox td>input:not(.h){width:98px}
+.tblbox .hp b.u{min-width:49px}
+/* ===== 空白行の次の行にも上の罫線 ===== */
+.tblbox tr.sp+tr:not(.bk)>*{border-top:1px solid var(--line)}
+
+/* ===== 罫線を二重に描く（拡大率などで境界線が1本欠けて見えても、もう1本が残る） ===== */
+.tblbox thead th,.tblbox tbody tr:not(.sp)>*{box-shadow:inset 0 -1px 0 var(--line),inset -1px 0 0 var(--line)}
+.tblbox tr.sp+tr:not(.bk)>*{box-shadow:inset 0 1px 0 var(--line),inset 0 -1px 0 var(--line),inset -1px 0 0 var(--line)}
+
+/* ===== 保存状態の表示 ===== */
+.sync{font-size:11px;color:var(--mute);align-self:center;white-space:nowrap}
+.sync-saved{color:var(--ok)}.sync-error{color:var(--ng)}.sync-local{color:#b7791f}
+.rest-l{font-size:10px;color:var(--mute)}
+
+/* ===== スタッフ：氏名を4行結合し、右に「前半・後半／勤務時間／前半・後半／休憩時間」 ===== */
+.tblbox th.v3{left:102px;min-width:0;font-size:10px;white-space:nowrap;padding:2px 3px;text-align:center}
+.tblbox tbody tr>th.v3:first-child{border-left:0}
+.tblbox th.v2{left:24px}
+.vn.stacked{flex-direction:column;gap:4px}
+.vn.stacked .vn-txt{flex:none;width:100%}
+.hp.cap{display:inline-block;width:49px;text-align:center;font-size:9px;color:var(--mute);line-height:1.2}
+.tblbox th.v3{position:sticky;z-index:1;background:var(--card)}
